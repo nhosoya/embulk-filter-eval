@@ -41,7 +41,6 @@ module Embulk
 
       def add(page)
         page.each do |record|
-          begin
             record = hash_record(record)
 
             result = {}
@@ -59,8 +58,6 @@ module Embulk
             end
 
             page_builder.add(result.values)
-          rescue
-          end
         end
       end
 
